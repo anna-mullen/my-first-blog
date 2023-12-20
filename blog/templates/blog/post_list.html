@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Anna's Blog</title>
-    </head>
-    <body>
-        <header>
-            <h1><a href="/">Anna's Blog</a></h1>
-        </header>
-        <p>Welcome to Anna's Blog. Here we are testing the functionality of a blog written in <strong>Django/Python</strong>, tested locally, stored with version control in Github, and hosted by Pythonanywhere.</p>
-        <p>The database that this blog uses is SQLite3. There is a separate SQLite3 database on my local machine for testing purposes, separate from the SQLite3 database on pythonanywhere for the production data</p>
-        <p>On this blog, you may find posts about:</p>
-        <ul><li>Hiking</li><li>Baking</li><li>Reading</li><li>Nature</li><li>And More!</li></ul>>
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </article>
+<head>
+    <title>Anna's Blog</title>
+</head>
+<body>
 
+    <header>
+        <h1><a href="/">Anna's Blog</a></h1>
+    </header>
+
+    <p>Welcome to Anna's Blog. Here we are testing the functionality of a blog written in <strong>Django/Python</strong>.</p>
+
+    {% for post in posts %}
         <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-    </body>
+    {% endfor %}
+
+</body>
 </html>
