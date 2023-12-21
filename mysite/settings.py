@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-# import os # ADDED BY ANNA for debugging css not displaying
 
 from pathlib import Path
 
@@ -134,8 +133,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR/'static'
-
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] # ADDED BY ANNA for debugging css not displaying
 
 
 # Default primary key field type
