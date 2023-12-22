@@ -16,6 +16,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Added by ANNA to debug an error in pythonanywhere where my .css files is "Refused to apply style from my .css file because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
