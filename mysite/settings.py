@@ -41,7 +41,6 @@ ALLOWED_HOSTS += ['.pythonanywhere.com']
 # ALLOWED_HOSTS += ['your-glitch-subdomain.glitch.me']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
