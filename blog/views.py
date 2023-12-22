@@ -1,7 +1,15 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
+# Adding below import to get 404 error for post_detail (or could I add comma & beyond to the above import?)
+from django.shortcuts import render, get_object_or_404
 
+# view of a list of posts
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+# view of a single post
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})
