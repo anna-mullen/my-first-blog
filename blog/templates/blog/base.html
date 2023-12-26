@@ -13,7 +13,12 @@
     <body>
         <header class="page-header">
           <div class="container">
-              <h1><a href="/">Anna's Blog</a></h1>
+            {% if user.is_authenticated %} <!-- This ensures that the user is authenticated (logged in) before displaying the edit icon option -->
+                <a href="{% url 'post_new' %}" class="top-menu">
+                    {% include './icons/file-earmark-plus.svg' %}
+                </a>
+            {% endif %}
+            <h1><a href="/">Anna's Blog</a></h1>
           </div>
         </header>
         <main class="container">

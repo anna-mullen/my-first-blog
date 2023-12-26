@@ -2,6 +2,13 @@
 
 {% block content %}
     <article class="post">
+        <aside class="actions"> <!-- This actions class: secondary button adds an edit button on the post_detail page -->
+            {% if user.is_authenticated %} <!-- This will only show the button IF the user is logged in (authenticated) -->
+                <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
+                    {% include './icons/pencil-fill.svg' %}
+                </a>
+            {% endif %}
+        </aside>
         {% if post.published_date %}
             <time class="date">
                 {{ post.published_date }}
